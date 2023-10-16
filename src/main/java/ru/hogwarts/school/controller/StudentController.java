@@ -32,13 +32,16 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
-    public boolean remove(@PathVariable long id) {
+    public Student remove(@PathVariable long id) {
         return service.remove(id);
     }
 
-    // localhost:8080/student/byAge?age=15
     @GetMapping("/byAge")
     public Collection<Student> byAge(@RequestParam int age) {
         return service.filterByAge(age);
     }
+@GetMapping ("/byAgeBetween")
+    public Collection<Student> byAgeBetween(@RequestParam int min, @RequestParam int max){
+        return service.filterByAgeBetween(min,max);
+}
 }
