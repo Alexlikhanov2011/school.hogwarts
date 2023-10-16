@@ -41,4 +41,8 @@ public class StudentService {
     public Collection<Student> filterByAge(int age) {
         return repository.findAllByAge(age);
     }
+
+    public Collection<Student> filterByAgeBetween(int min, int max) {
+   return repository.findAllByAgeBetween(min, max);
+    }
 }

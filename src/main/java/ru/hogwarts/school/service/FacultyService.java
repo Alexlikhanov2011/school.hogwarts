@@ -37,7 +37,7 @@ public class FacultyService {
                 .orElse(null);
     }
 
-    public Collection<Faculty> filterByColor(String color) {
-       return repository.findAllByColor(color);
+    public Collection<Faculty> filterByNameOrColor(String name, String color) {
+       return repository.findAllByNameOrColorIgnoreCase(name,color);
     }
 }
